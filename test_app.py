@@ -41,17 +41,3 @@ def test_feedback_Setosa():
         assert response.status_code == 200
         assert response.json() == {"detail": "Feedback loop successful"}
 
-# test to check if Iris Virginica is classified correctly
-def test_pred_Versicolour():
-    # defining a sample payload for the testcase
-    payload = {
-        "sepal_length": 2,
-        "sepal_width": 8.0,
-        "petal_length": 1.2,
-        "petal_width": 9.4,
-    }
-    with TestClient(app) as client:
-        response = client.post("/predict_flower", json=payload)
-        # asserting the correct response is received
-        assert response.status_code == 200
-        assert response.json() == {"flower_class": "Iris Virginica"}
