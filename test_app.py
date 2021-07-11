@@ -23,12 +23,12 @@ def test_pred_virginica():
         response = client.post("/predict_flower", json=payload)
         # asserting the correct response is received
         assert response.status_code == 200
-        assert response.json() == {"flower_class": "Iris Virgianic"}
+        assert response.json() == {"flower_class": "Iris Virginica"}
 
 def test_feedback_Setosa():
     # defining a sample payload for the testcase
     payload = {
-        "sepal_length": 8.5,
+        "sepal_length": 5.9,
         "sepal_width": 3.5,
         "petal_length": 1.5,
         "petal_width": 0.4,
