@@ -1,10 +1,15 @@
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 
 # define a Gaussain NB classifier
-clf = GaussianNB()
+# defining different classifiers
+#clf = GaussianNB() #-- 0.9
+#clf = KNeighborsClassifier(n_neighbors=100) #--0.6
+clf = SVC(kernel='poly', degree=3, max_iter=300000) #--0.967
 
 # define the class encodings and reverse encodings
 classes = {0: "Iris Setosa", 1: "Iris Versicolour", 2: "Iris Virginica"}
